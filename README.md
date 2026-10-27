@@ -2,7 +2,7 @@
 
 论文使用的原始训练、模型、实验和测速代码归档。
 
-本仓库按模块整理已有代码与配置，**未修改原始代码内容**。原始绝对路径、导入方式和实验依赖保持原样；这是代码归档，不是重新封装的一键复现工程。数据集、图片、模型权重、训练日志和论文文件不随仓库提供。
+
 
 ## 目录
 
@@ -35,12 +35,3 @@
 - 少量标注实验：各实验目录内的 `train_downstream.py` 和 `train_table4.py`
 - 服务器测速：`flops_fps_20261014/benchmark.py`
 
-`cea_public_20260915` 和 `cea_cvrp_full_20260923` 中的旧 Stage 3 配置作为配方依赖保留；最终 RiceLiteKD 使用 `stage3_comparison_20261006/configs` 中的 Refine7 配置。对比工程的公共模块保留了原有其他模型实现，以保持源文件完整。
-
-## 依赖与来源
-
-代码涉及 PyTorch、TorchVision、MMSegmentation、MMCV、MMEngine、NumPy、Pillow、OpenCV、scikit-learn、Albumentations、timm、einops 和部分模型的 mamba-ssm。具体依赖以相应源文件为准，本次整理未重新安装训练环境或运行训练。
-
-对比模型的原始仓库地址、提交版本与适配记录保留在 `segmentation_comparisons_v2_20261011/source_provenance.json`；各源文件中的作者与版权声明原样保留。
-
-`SHA256SUMS.txt` 记录归档代码与配置的校验值。本次整理已逐文件确认与本地原始文件一致。
