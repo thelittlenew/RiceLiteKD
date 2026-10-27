@@ -1,0 +1,140 @@
+[
+  {
+    "id": "b2",
+    "label": "SegFormer-B2",
+    "config": "/root/autodl-tmp/work/cea_public_20260915/configs/RiceSEG_b2_seed42.py",
+    "checkpoint": "/root/autodl-tmp/work/manuscript_efficiency_20261014/b2_seed42.pth",
+    "parameters": 24723650,
+    "seed": 42,
+    "checkpoint_scope": "Archived RiceSEG validation-best checkpoint; timing is an architecture benchmark, not a re-evaluation of the accuracy table",
+    "checkpoint_sha256": "8e93db77460f6dff0f79dc36901c425a835f2b510c1c1ea802762402d90b9f00"
+  },
+  {
+    "id": "r50",
+    "label": "ResNet-50",
+    "config": "/root/autodl-tmp/work/cea_public_20260915/configs/RiceSEG_r50_seed42.py",
+    "checkpoint": "/root/autodl-tmp/work/manuscript_efficiency_20261014/r50_seed42.pth",
+    "parameters": 24756290,
+    "seed": 42,
+    "checkpoint_scope": "Archived RiceSEG validation-best checkpoint; timing is an architecture benchmark, not a re-evaluation of the accuracy table",
+    "checkpoint_sha256": "f27c096142a6f6755ca13a3664031a94d86c05ebf3d0fe52207b9281d0a18b09"
+  },
+  {
+    "id": "stage2",
+    "label": "Teacher",
+    "config": "/root/autodl-tmp/work/cea_public_20260915/configs/RiceSEG_stage2_seed42.py",
+    "checkpoint": "/root/autodl-tmp/work/cea_public_20260915/runs/RiceSEG_stage2_seed42/best_mIoU_epoch_28.pth",
+    "parameters": 24006470,
+    "seed": 42,
+    "checkpoint_scope": "Archived RiceSEG validation-best checkpoint; timing is an architecture benchmark, not a re-evaluation of the accuracy table"
+  },
+  {
+    "id": "PIDNet_M",
+    "label": "PIDNet-M",
+    "config": "/root/autodl-tmp/work/segmentation_comparisons_v2_20261011/configs/RiceSEG_PIDNet_M_seed7.py",
+    "checkpoint": "/root/autodl-tmp/work/segmentation_comparisons_v2_20261011/runs/RiceSEG_PIDNet_M_seed7/best_model.pth",
+    "parameters": 28758597,
+    "seed": 7,
+    "checkpoint_sha256": "c43305d0faec8dfc7712d48c32244dff5bf714f22dbc22c92e5ec63f1d44a37c",
+    "checkpoint_scope": "RiceSEG checkpoint selected for the manuscript table"
+  },
+  {
+    "id": "HRNetV2_W32",
+    "label": "HRNetV2-W32",
+    "config": "/root/autodl-tmp/work/segmentation_comparisons_v2_20261011/configs/RiceSEG_HRNetV2_W32_seed42.py",
+    "checkpoint": "/root/autodl-tmp/work/segmentation_comparisons_v2_20261011/runs/RiceSEG_HRNetV2_W32_seed42/best_model.pth",
+    "parameters": 29537858,
+    "seed": 42,
+    "checkpoint_sha256": "6291c446390d23ceb84e2dd56e4f5793b95cf26e713d2f59030cdc97742be744",
+    "checkpoint_scope": "RiceSEG checkpoint selected for the manuscript table"
+  },
+  {
+    "id": "UNet",
+    "label": "UNet",
+    "config": "/root/autodl-tmp/work/segmentation_comparisons_v2_20261011/configs/RiceSEG_UNet_seed42.py",
+    "checkpoint": "/root/autodl-tmp/work/segmentation_comparisons_v2_20261011/runs/RiceSEG_UNet_seed42/best_model.pth",
+    "parameters": 29060676,
+    "seed": 42,
+    "checkpoint_sha256": "2f37fae283c0728ea2918dd511c5236f7f7933f229ff99a588f379d0cb4059ab",
+    "checkpoint_scope": "RiceSEG checkpoint selected for the manuscript table"
+  },
+  {
+    "id": "CCASeg_S",
+    "label": "CCASeg-S",
+    "config": "/root/autodl-tmp/work/segmentation_comparisons_v2_20261011/configs/RiceSEG_CCASeg_S_seed42.py",
+    "checkpoint": "/root/autodl-tmp/work/segmentation_comparisons_v2_20261011/runs/RiceSEG_CCASeg_S_seed42/best_model.pth",
+    "parameters": 23967684,
+    "seed": 42,
+    "checkpoint_sha256": "872b6a0f06f08c7743c773a8f5b07b0c4d0025dc3a3edae45441831ebf88910f",
+    "checkpoint_scope": "RiceSEG checkpoint selected for the manuscript table"
+  },
+  {
+    "id": "b0",
+    "label": "SegFormer-B0",
+    "config": "/root/autodl-tmp/work/cea_public_20260915/configs/RiceSEG_b0_seed42.py",
+    "checkpoint": "/root/autodl-tmp/work/manuscript_efficiency_20261014/b0_seed42.pth",
+    "parameters": 3715682,
+    "seed": 42,
+    "checkpoint_scope": "Archived RiceSEG validation-best checkpoint; timing is an architecture benchmark, not a re-evaluation of the accuracy table",
+    "checkpoint_sha256": "d60bf107f90cd24e5e90bc2a12d8087569708bf60add33d2eb0cd7f92fa6884b"
+  },
+  {
+    "id": "mobile",
+    "label": "MobileNetV2",
+    "config": "/root/autodl-tmp/work/cea_public_20260915/configs/RiceSEG_mobile_seed42.py",
+    "checkpoint": "/root/autodl-tmp/work/cea_public_20260915/runs/RiceSEG_mobile_seed42/best_mIoU_epoch_82.pth",
+    "parameters": 2197762,
+    "seed": 42,
+    "checkpoint_scope": "Archived RiceSEG validation-best checkpoint; timing is an architecture benchmark, not a re-evaluation of the accuracy table"
+  },
+  {
+    "id": "RiceLiteKD",
+    "label": "RiceLiteKD",
+    "config": "/root/autodl-tmp/work/stage3_comparison_20261006/configs/RiceSEG_stage3_seed7.py",
+    "checkpoint": "/root/autodl-tmp/work/manuscript_efficiency_20261014/RiceLiteKD_RiceSEG_seed7.pth",
+    "parameters": 956852,
+    "seed": 7,
+    "checkpoint_sha256": "88cee09c01539eaedd1e89b1fd3daab572ff1b24ce715cb811099c62ee9712b1",
+    "checkpoint_scope": "RiceSEG checkpoint matching manuscript rounded mIoU, panicle IoU and Dice"
+  },
+  {
+    "id": "LEDNet",
+    "label": "LEDNet",
+    "config": "/root/autodl-tmp/work/segmentation_comparisons_v2_20261011/configs/RiceSEG_LEDNet_seed7.py",
+    "checkpoint": "/root/autodl-tmp/work/segmentation_comparisons_v2_20261011/runs/RiceSEG_LEDNet_seed7/best_model.pth",
+    "parameters": 918625,
+    "seed": 7,
+    "checkpoint_sha256": "dd366c7f68b01504226f19415387857e0cdc74eef7fa782bacce3edad4f1de01",
+    "checkpoint_scope": "RiceSEG checkpoint selected for the manuscript table"
+  },
+  {
+    "id": "Fast_SCNN",
+    "label": "Fast-SCNN",
+    "config": "/root/autodl-tmp/work/segmentation_comparisons_v2_20261011/configs/RiceSEG_Fast_SCNN_seed7.py",
+    "checkpoint": "/root/autodl-tmp/work/segmentation_comparisons_v2_20261011/runs/RiceSEG_Fast_SCNN_seed7/best_model.pth",
+    "parameters": 1453302,
+    "seed": 7,
+    "checkpoint_sha256": "31a94391dd7f65d4563921bec89429d80c0bcdc9e80bd58624ca9dd691035aed",
+    "checkpoint_scope": "RiceSEG checkpoint selected for the manuscript table"
+  },
+  {
+    "id": "MK_UNet_M",
+    "label": "MK-UNet-M",
+    "config": "/root/autodl-tmp/work/segmentation_comparisons_v2_20261011/configs/RiceSEG_MK_UNet_M_seed7.py",
+    "checkpoint": "/root/autodl-tmp/work/segmentation_comparisons_v2_20261011/runs/RiceSEG_MK_UNet_M_seed7/best_model.pth",
+    "parameters": 1150426,
+    "seed": 7,
+    "checkpoint_sha256": "40f8f2f19a476f8b3ed1448c84344fb19bd444ed3c1aaa42f450f41334a19b9e",
+    "checkpoint_scope": "RiceSEG checkpoint selected for the manuscript table"
+  },
+  {
+    "id": "FEM_Lite",
+    "label": "FEM-Lite",
+    "config": "/root/autodl-tmp/work/segmentation_comparisons_v2_20261011/configs/RiceSEG_FEM_Lite_seed7.py",
+    "checkpoint": "/root/autodl-tmp/work/segmentation_comparisons_v2_20261011/runs/RiceSEG_FEM_Lite_seed7/best_model.pth",
+    "parameters": 924129,
+    "seed": 7,
+    "checkpoint_sha256": "ce3eee9d62c20081bbceb033dd6dbe14716beec9c3ed9d8bd0151bc975fe95b1",
+    "checkpoint_scope": "RiceSEG checkpoint selected for the manuscript table"
+  }
+]

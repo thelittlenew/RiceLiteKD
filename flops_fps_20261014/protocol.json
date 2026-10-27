@@ -1,0 +1,28 @@
+{
+  "gpu": "NVIDIA GeForce RTX 4090 D",
+  "torch": "2.8.0+cu128",
+  "cuda": "12.8",
+  "batch_size": 1,
+  "input_shape": [
+    1,
+    3,
+    512,
+    512
+  ],
+  "precision": "FP32",
+  "tf32": false,
+  "cudnn_benchmark": false,
+  "warmup": 100,
+  "repeats": 5,
+  "forwards_per_repeat": 100,
+  "aggregation": "FPS = 1000 / median of five repeat mean latencies (ms)",
+  "scope": "GPU-resident input through complete evaluation-mode model encode_decode, including 512x512 logit interpolation; no disk I/O, preprocessing, host/device transfer or argmax",
+  "flops": "MMEngine FlopAnalyzer, one multiply-add counted as one operation; per-image GFLOPs; fused attention matrix products counted explicitly",
+  "checkpoint_dataset": "RiceSEG",
+  "no_training": true,
+  "custom_flops_note": "FEM-Lite: same-padding convolution counted as output elements times per-filter kernel size; real selective scan core 5*B*D*L*N plus B*D*L for the skip; radix-2 FFT estimate 4*N*log2(N) per complex transform plus 2*N for inverse normalization. One MAC = one counted operation. Elementwise activations and data movement not supported by MMEngine are excluded for all models.",
+  "references": [
+    "https://mmengine.readthedocs.io/en/latest/api/generated/mmengine.analysis.FlopAnalyzer.html",
+    "https://github.com/state-spaces/mamba/blob/main/mamba_ssm/ops/selective_scan_interface.py"
+  ]
+}
