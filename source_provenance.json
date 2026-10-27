@@ -1,0 +1,384 @@
+{
+  "candidate_audit": {
+    "repositories": {
+      "CCASeg": {
+        "commit": "98242d5d4cd18c5b8468e573cd97909739b4d003",
+        "url": "https://github.com/catchyoo/CCASeg.git"
+      },
+      "DABNet": {
+        "commit": "b8d62fe7f14ae4909a9e9aad1dd6e0ade98431cd",
+        "url": "https://github.com/Reagan1311/DABNet.git"
+      },
+      "ESPNetv2": {
+        "commit": "b78e323039908f31347d8ca17f49d5502ef1a594",
+        "url": "https://github.com/sacmehta/ESPNetv2.git"
+      },
+      "FEM-Lite": {
+        "commit": "368acd68167ed936b513b6d4cfdd846a6dfb8189",
+        "url": "https://github.com/HUY-BK/FEM-Lite.git"
+      },
+      "GCNet": {
+        "commit": "8b4c0abf82cfe13a39ae10d8431a554fc5b3284b",
+        "url": "https://github.com/gyyang23/GCNet.git"
+      },
+      "LEDNet": {
+        "commit": "5d900d9cfabb3091c952b79be34246aea0608e42",
+        "url": "https://github.com/xiaoyufenfei/LEDNet.git"
+      },
+      "LETNet": {
+        "commit": "faaa065312166ccafa4a0d90d2f46d3ae59d75af",
+        "url": "https://github.com/IVIPLab/LETNet.git"
+      },
+      "MK-UNet": {
+        "commit": "2fa8b230a057602539af7655203ad434bf56a5b6",
+        "url": "https://github.com/SLDGroup/MK-UNet.git"
+      },
+      "pytorch_EDANet": {
+        "commit": "0300b6574c16786b1d9226bed51e18942abd69c6",
+        "url": "https://github.com/wpf535236337/pytorch_EDANet.git"
+      }
+    },
+    "files": [
+      {
+        "repo": "MK-UNet",
+        "source": "mkunet_network.py",
+        "target": "mk_unet.py",
+        "source_sha256": "b9ba5ade1b116aef3a40ca35d756dcc15de9336c743a2022f90475bd4dec7031",
+        "sha256": "b9ba5ade1b116aef3a40ca35d756dcc15de9336c743a2022f90475bd4dec7031",
+        "replacements": []
+      },
+      {
+        "repo": "CCASeg",
+        "source": "mmseg/models/decode_heads/ccaseg_small.py",
+        "target": "ccaseg_small.py",
+        "source_sha256": "4b7c456abcc215571a5c55bf0019d4d39e4a8f6cc259ed49eafb2d58c2668812",
+        "sha256": "fea9b899f525ffeaf8233b83a78fe18a0327bb9cd630af56d5c0a3a8fd72f20c",
+        "replacements": [
+          [
+            "from ..utils import resize",
+            "from mmseg.models.utils import resize"
+          ],
+          [
+            "from ..builder import MODELS",
+            "from mmseg.registry import MODELS"
+          ],
+          [
+            "from .decode_head import BaseDecodeHead",
+            "from mmseg.models.decode_heads.decode_head import BaseDecodeHead"
+          ],
+          [
+            "super(CCASegHead_small, self).__init__(input_transform='multiple_select', **kwargs)",
+            "decoder_params = kwargs.pop('decoder_params')\n        super(CCASegHead_small, self).__init__(input_transform='multiple_select', **kwargs)"
+          ],
+          [
+            "        decoder_params = kwargs['decoder_params']\n",
+            ""
+          ]
+        ]
+      },
+      {
+        "repo": "CCASeg",
+        "source": "local_configs/_base_/models/ccaseg_small.py",
+        "target": "ccaseg_config.py",
+        "source_sha256": "b99af3e8429e9d6e5168a6f6f5733cb1fd3c611f51fa58f49547bcf463b947dc",
+        "sha256": "b99af3e8429e9d6e5168a6f6f5733cb1fd3c611f51fa58f49547bcf463b947dc",
+        "replacements": []
+      },
+      {
+        "repo": "GCNet",
+        "source": "gcnet-m_4xb3-120k_cityscapes-1024x1024.py",
+        "target": "gcnet_config.py",
+        "source_sha256": "20b98091c528921c68f1850e842f2bc5bd8f295b7f4dfaeb28734f4f0ce22bbe",
+        "sha256": "20b98091c528921c68f1850e842f2bc5bd8f295b7f4dfaeb28734f4f0ce22bbe",
+        "replacements": []
+      },
+      {
+        "repo": "DABNet",
+        "source": "model/DABNet.py",
+        "target": "dabnet.py",
+        "source_sha256": "7851a405d7eb120499e02ab42f73e1dfd4c31d3e887212c051517169fd8e1db6",
+        "sha256": "7851a405d7eb120499e02ab42f73e1dfd4c31d3e887212c051517169fd8e1db6",
+        "replacements": []
+      },
+      {
+        "repo": "pytorch_EDANet",
+        "source": "EDANet.py",
+        "target": "edanet.py",
+        "source_sha256": "d0199947630a8c267d159c57063b3892d1e41ac1d1e10a15b849b0af9234b8e9",
+        "sha256": "2355c0b7576dd7926949d57646c90ccaf8d9efe0a0de80531819f02fddb9c18c",
+        "replacements": [
+          [
+            "print output.size()",
+            "print(output.size())"
+          ],
+          [
+            "        if not self.training:\n            output = F.interpolate(output, scale_factor=2, mode='bilinear',align_corners=True)",
+            "        # Keep native input resolution; dataset evaluation handles original-size resizing."
+          ]
+        ]
+      },
+      {
+        "repo": "LEDNet",
+        "source": "train/lednet.py",
+        "target": "lednet.py",
+        "source_sha256": "d15d5240a460fefc3acb9fea720286aa45e5e2699f87a7a37b698bab878532ab",
+        "sha256": "155ada97a86c62368d05229a392336cdc2dc544b48db7906b1a0d220436a5039",
+        "replacements": [
+          [
+            "APN_Module(in_ch=128,out_ch=20)",
+            "APN_Module(in_ch=128,out_ch=num_classes)"
+          ],
+          [
+            "size=(512, 1024), mode=\"bilinear\", align_corners=True",
+            "size=(input.shape[2]*8, input.shape[3]*8), mode=\"bilinear\", align_corners=True"
+          ]
+        ]
+      },
+      {
+        "repo": "LETNet",
+        "source": "core/LETNet.py",
+        "target": "letnet.py",
+        "source_sha256": "fd31d28ff039509e828eab701a37be1059161642c1dff8cab323bb3e3bdd5161",
+        "sha256": "d994df0a45769f192a38713290cb794a6bd083310d7148e721752a19ec54cc1b",
+        "replacements": [
+          [
+            "from torchsummary import summary",
+            ""
+          ],
+          [
+            "from IPython import embed",
+            ""
+          ],
+          [
+            "from model.transformer import TransBlock",
+            "from let_transformer import TransBlock"
+          ],
+          [
+            "from model.patch import reverse_patches",
+            "from let_patch import reverse_patches"
+          ]
+        ]
+      },
+      {
+        "repo": "LETNet",
+        "source": "Network/model/module/transformer.py",
+        "target": "let_transformer.py",
+        "source_sha256": "aaff848c92ea1eecb9f828966b2e52b1aa3dac573ea25030acf4bac1e4bb1b30",
+        "sha256": "3d02d38887f0054af61b93b1b9ce8e8e35f99935f282932808bc2895d16c63cf",
+        "replacements": [
+          [
+            "from model.patch import",
+            "from let_patch import"
+          ]
+        ]
+      },
+      {
+        "repo": "LETNet",
+        "source": "Network/model/module/patch.py",
+        "target": "let_patch.py",
+        "source_sha256": "841d7a4de781b5f99e9dd664c8342fd09c771a17d4b7dc39b2a214edd4d3b1fc",
+        "sha256": "841d7a4de781b5f99e9dd664c8342fd09c771a17d4b7dc39b2a214edd4d3b1fc",
+        "replacements": []
+      },
+      {
+        "repo": "ESPNetv2",
+        "source": "segmentation/cnn/cnn_utils.py",
+        "target": "cnn/cnn_utils.py",
+        "source_sha256": "e785745599e026d2196c7c85b81faa96347fc425aed931699f5923b463581280",
+        "sha256": "e785745599e026d2196c7c85b81faa96347fc425aed931699f5923b463581280",
+        "replacements": []
+      },
+      {
+        "repo": "ESPNetv2",
+        "source": "segmentation/cnn/Model.py",
+        "target": "cnn/Model.py",
+        "source_sha256": "2f7d2b36193866f3101979d1b1e2fb5c033a55a4d16f474b50973d814f81f345",
+        "sha256": "2f7d2b36193866f3101979d1b1e2fb5c033a55a4d16f474b50973d814f81f345",
+        "replacements": []
+      },
+      {
+        "repo": "ESPNetv2",
+        "source": "segmentation/cnn/SegmentationModel.py",
+        "target": "cnn/SegmentationModel.py",
+        "source_sha256": "afea2701d748da557c750e963a94ba332047694603f116aa1c4ebd7bb5e5214a",
+        "sha256": "afea2701d748da557c750e963a94ba332047694603f116aa1c4ebd7bb5e5214a",
+        "replacements": []
+      },
+      {
+        "repo": "FEM-Lite",
+        "source": "Model/Bottleneck.py",
+        "target": "fem_source/Bottleneck.py",
+        "source_sha256": "b0ca156941df044fe31face7d5f289f046022d8b8aaa0a6c9d974c37647d3d6a",
+        "sha256": "b0ca156941df044fe31face7d5f289f046022d8b8aaa0a6c9d974c37647d3d6a",
+        "replacements": []
+      },
+      {
+        "repo": "FEM-Lite",
+        "source": "Model/CCMA.py",
+        "target": "fem_source/CCMA.py",
+        "source_sha256": "d93eba4e47d9ca72330e23257ff37132d973b37ece685592cae46c3c70b36209",
+        "sha256": "d93eba4e47d9ca72330e23257ff37132d973b37ece685592cae46c3c70b36209",
+        "replacements": []
+      },
+      {
+        "repo": "FEM-Lite",
+        "source": "Model/FEM_Lite.py",
+        "target": "fem_source/FEM_Lite.py",
+        "source_sha256": "650c85755fb61e9caf7e69cf997e06ce2ac0cf83c2e00d8b9bc440a19e3018a7",
+        "sha256": "650c85755fb61e9caf7e69cf997e06ce2ac0cf83c2e00d8b9bc440a19e3018a7",
+        "replacements": []
+      },
+      {
+        "repo": "FEM-Lite",
+        "source": "Model/FMVSS.py",
+        "target": "fem_source/FMVSS.py",
+        "source_sha256": "6c16d6ed1be972a5b2c90ec5f33560108cec095479edff58287bba92faac0277",
+        "sha256": "6c16d6ed1be972a5b2c90ec5f33560108cec095479edff58287bba92faac0277",
+        "replacements": []
+      },
+      {
+        "repo": "FEM-Lite",
+        "source": "Model/MASF.py",
+        "target": "fem_source/MASF.py",
+        "source_sha256": "ca301d8159765277381dfcecff42b0d4f098b8440859c4cde9d72ca2b55f7e23",
+        "sha256": "ca301d8159765277381dfcecff42b0d4f098b8440859c4cde9d72ca2b55f7e23",
+        "replacements": []
+      },
+      {
+        "repo": "FEM-Lite",
+        "source": "Model/*.py",
+        "target": "fem_lite.py",
+        "sha256": "38764288dbb8b0f53211e313a31a7c6bb6cc75852de344611c409545c7efef8e",
+        "changes": "AST concatenation removes invalid circular/cross-module imports; all original module parameters retained. Bottleneck spatial dimensions 8 -> 16 adapt native 256 input to shared 512 input. No scan operator substitution."
+      }
+    ]
+  },
+  "gc_sources": {
+    "repositories": {
+      "GCNet": {
+        "commit": "8b4c0abf82cfe13a39ae10d8431a554fc5b3284b",
+        "url": "https://github.com/gyyang23/GCNet.git"
+      },
+      "OffSeg": {
+        "commit": "a203f52fb66399517c49f5acda3aaf931804036e",
+        "url": "https://github.com/HVision-NKU/OffSeg.git"
+      },
+      "CCASeg": {
+        "commit": "98242d5d4cd18c5b8468e573cd97909739b4d003",
+        "url": "https://github.com/catchyoo/CCASeg.git"
+      }
+    },
+    "files": [
+      {
+        "repo": "GCNet",
+        "source": "mmsegmentation/mmseg/models/utils/ppm.py",
+        "target": "recent_models/gc_ppm.py",
+        "source_sha256": "dc2aa232874d92a2dffa16ffa2bbf7d4c966d6a38fa312d97b3915a65110ef49",
+        "sha256": "dc2aa232874d92a2dffa16ffa2bbf7d4c966d6a38fa312d97b3915a65110ef49",
+        "changes": []
+      },
+      {
+        "repo": "GCNet",
+        "source": "mmsegmentation/mmseg/models/backbones/gcnet.py",
+        "target": "recent_models/gcnet.py",
+        "source_sha256": "9cbbdf0166e8f61a96b420556a925a097089e9a71fa121f54172c3ed388c395e",
+        "sha256": "2011128a07fd2f4e4b469f92862cb66272aca2814ae21011ae2c48d714668c4f",
+        "changes": [
+          {
+            "before": "from mmseg.models.utils import RPPM, PAPPM, DAPPM, BasicBlock, Bottleneck, resize",
+            "after": "from .gc_ppm import RPPM, PAPPM, DAPPM\nfrom mmseg.models.utils import BasicBlock, Bottleneck, resize"
+          }
+        ]
+      },
+      {
+        "repo": "GCNet",
+        "source": "mmsegmentation/mmseg/models/decode_heads/gcnet_head.py",
+        "target": "recent_models/gcnet_head.py",
+        "source_sha256": "b6daeba1e2fcc52d0d14447b3e014ed91108a00ebcafbd49137a6b9f8e8227e1",
+        "sha256": "b6daeba1e2fcc52d0d14447b3e014ed91108a00ebcafbd49137a6b9f8e8227e1",
+        "changes": []
+      },
+      {
+        "repo": "OffSeg",
+        "source": "mmseg/models/backbones/efficientformer_v2.py",
+        "target": "recent_models/efficientformer_v2.py",
+        "source_sha256": "a845723b540d4246a92d917744b0cf9fa48fbf4260a43b79b720bda180f95816",
+        "sha256": "a845723b540d4246a92d917744b0cf9fa48fbf4260a43b79b720bda180f95816",
+        "changes": []
+      },
+      {
+        "repo": "OffSeg",
+        "source": "mmseg/models/decode_heads/freqfusion.py",
+        "target": "recent_models/freqfusion.py",
+        "source_sha256": "6f4282e185527e73dacc27c58b2bd2198c48f9e20708f90ffc69d78e9789bc8f",
+        "sha256": "eeebebdcd084c8644412c57fd250441ce2559526c22f472ad6a0671f19ab58c0",
+        "changes": [
+          {
+            "before": "from mmcv.ops.carafe import normal_init, xavier_init, carafe",
+            "after": "from mmcv.ops.carafe import normal_init, xavier_init, carafe as _carafe\n\ndef carafe(features, masks, kernel_size, group_size, scale_factor):\n    # MMCV requires identical dtypes; use the original FP32 operator inside AMP.\n    with torch.autocast(device_type=features.device.type, enabled=False):\n        output = _carafe(features.float(), masks.float(), kernel_size, group_size, scale_factor)\n    return output.to(features.dtype)"
+          }
+        ]
+      },
+      {
+        "repo": "OffSeg",
+        "source": "mmseg/models/decode_heads/offset_learning.py",
+        "target": "recent_models/offset_learning.py",
+        "source_sha256": "e6ab0dc07ff533e66b8401fff736af820c0463ffc1ae7f741d61fe3ad21caef1",
+        "sha256": "e6ab0dc07ff533e66b8401fff736af820c0463ffc1ae7f741d61fe3ad21caef1",
+        "changes": []
+      },
+      {
+        "repo": "OffSeg",
+        "source": "mmseg/models/decode_heads/offseg_head.py",
+        "target": "recent_models/offseg_head.py",
+        "source_sha256": "ddb96c5f8858b4cd0fb0b9cbcc5af07b6df18942e17d136ffea04217eb2233f6",
+        "sha256": "ace7c83789e148f254545ebe9db8c446bec2a06c52d6e3fb31413bd3090a7a33",
+        "changes": [
+          {
+            "before": "from ..utils import resize",
+            "after": "from mmseg.models.utils import resize"
+          },
+          {
+            "before": "from .decode_head import BaseDecodeHead",
+            "after": "from mmseg.models.decode_heads.decode_head import BaseDecodeHead"
+          },
+          {
+            "before": "from mmseg.models.decode_heads import Offset_Learning",
+            "after": "from .offset_learning import Offset_Learning"
+          }
+        ]
+      },
+      {
+        "repo": "CCASeg",
+        "source": "mmseg/models/decode_heads/ccaseg_mit.py",
+        "target": "recent_models/ccaseg_mit.py",
+        "source_sha256": "2c33517c619eec23317702938d5926d4fb952de841b91bc116b0fab75ab2825a",
+        "sha256": "fcd0ea2d88de41f14ec3affca9fb2599eaf291127fd15e6241530d5eeb9ee48e",
+        "changes": [
+          {
+            "before": "from ..utils import resize",
+            "after": "from mmseg.models.utils import resize"
+          },
+          {
+            "before": "from ..builder import MODELS",
+            "after": "from mmseg.registry import MODELS"
+          },
+          {
+            "before": "from .decode_head import BaseDecodeHead",
+            "after": "from mmseg.models.decode_heads.decode_head import BaseDecodeHead"
+          },
+          {
+            "before": "super(CCASegHead_mit, self).__init__(input_transform='multiple_select', **kwargs)",
+            "after": "decoder_params = kwargs.pop('decoder_params')\n        super(CCASegHead_mit, self).__init__(input_transform='multiple_select', **kwargs)"
+          },
+          {
+            "before": "        decoder_params = kwargs['decoder_params']\n",
+            "after": ""
+          }
+        ]
+      }
+    ],
+    "architecture_changes": "None. Imports relocated into an isolated package. CCASeg decoder_params is consumed by its own head instead of forwarded to the current MMSeg base constructor (the upstream custom base accepts but does not use this argument). OffSeg CARAFE runs in an FP32 island inside shared AMP to satisfy MMCV feature/mask dtype requirements. Two-class output and common downstream training settings are supplied by task configs."
+  },
+  "note": "Only selected source files enter comparison_models. Their actual hashes are frozen in the experiment plan."
+}
