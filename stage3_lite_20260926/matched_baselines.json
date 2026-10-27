@@ -1,0 +1,44 @@
+{
+  "records": [
+    {
+      "seed": 42,
+      "run": "RiceSEG_random_student_seed42",
+      "parameters": 4821106,
+      "best_epoch": 97,
+      "validation_miou_percent": 73.97000122070312,
+      "config_sha256": "4c8e0389ba4e3094206f6b98920eb0b05c43236a3c36509d5354b9bdbb1ec4cf",
+      "checkpoint_sha256": "a62e1dd7bb908bfc024d339e16c58926e8c7367819aeec7f5a329b53d4eaf1ef",
+      "config": "E:\\work\\_records\\server_work\\public_backup_20260916\\cea_public_20260915\\configs\\RiceSEG_random_student_seed42.py",
+      "checkpoint": "E:\\work\\_records\\server_work\\public_backup_20260916\\cea_public_20260915\\runs\\RiceSEG_random_student_seed42\\best_mIoU_epoch_97.pth",
+      "validation_log": "E:\\work\\_records\\server_work\\public_backup_20260916\\cea_public_20260915\\runs\\RiceSEG_random_student_seed42\\20260916_002642\\vis_data\\scalars.json"
+    },
+    {
+      "seed": 7,
+      "run": "RiceSEG_random_student_seed7",
+      "parameters": 4821106,
+      "best_epoch": 120,
+      "validation_miou_percent": 74.0199966430664,
+      "config_sha256": "377082d5a2edd7304cec2cb029097d2ce884655530183d44d683fea80993fa68",
+      "checkpoint_sha256": "db87ffe4896410b8b12e4056c2061aee801553d3d6d11bd43ae0d4ce3ad1d76c",
+      "config": "E:\\work\\_records\\server_work\\public_backup_20260916\\cea_public_20260915\\configs\\RiceSEG_random_student_seed7.py",
+      "checkpoint": "E:\\work\\_records\\server_work\\public_backup_20260916\\cea_public_20260915\\runs\\RiceSEG_random_student_seed7\\best_mIoU_epoch_120.pth",
+      "validation_log": "E:\\work\\_records\\server_work\\public_backup_20260916\\cea_public_20260915\\runs\\RiceSEG_random_student_seed7\\20260916_023741\\vis_data\\scalars.json"
+    },
+    {
+      "seed": 3407,
+      "run": "RiceSEG_random_student_seed3407",
+      "parameters": 4821106,
+      "best_epoch": 99,
+      "validation_miou_percent": 73.86000061035156,
+      "config_sha256": "30ccd8368cbb62cc75f2f896f4e44423c66153994a22c367cc37f6fae1398d3f",
+      "checkpoint_sha256": "caaa73bb7fa13fe30eb2f9f43d7d4f854551ecbd2a4f7fc64e2c3b235f788dea",
+      "config": "E:\\work\\_records\\server_work\\public_backup_20260916\\cea_public_20260915\\configs\\RiceSEG_random_student_seed3407.py",
+      "checkpoint": "E:\\work\\_records\\server_work\\public_backup_20260916\\cea_public_20260915\\runs\\RiceSEG_random_student_seed3407\\best_mIoU_epoch_99.pth",
+      "validation_log": "E:\\work\\_records\\server_work\\public_backup_20260916\\cea_public_20260915\\runs\\RiceSEG_random_student_seed3407\\20260916_045027\\vis_data\\scalars.json"
+    }
+  ],
+  "validation_mean_percent": 73.9499994913737,
+  "validation_sample_std_pp": 0.08185190592312488,
+  "no_test_scores_read": true,
+  "primary_initial_pair_seed": 42
+}

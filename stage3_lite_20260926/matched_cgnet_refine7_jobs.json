@@ -1,0 +1,104 @@
+[
+  {
+    "name": "RiceSEG_cgnet_refine7_matched_random_seed42",
+    "dataset": "RiceSEG",
+    "phase": "RiceSEG_matched_random",
+    "seed": 42,
+    "parameters": 956852,
+    "architecture": "CGNetRefine7NativeSeg",
+    "initialization": "random",
+    "teacher": false,
+    "test_evaluated": false,
+    "confirmation_min_seed42_miou_percent": 73.47,
+    "command": [
+      "/root/miniconda3/bin/python",
+      "-u",
+      "/root/autodl-tmp/work/stage3_lite_20260926/train_matched_cgnet_refine7.py",
+      "--seed",
+      "42"
+    ],
+    "purpose": "Keep CGNet, fusion256 and two residual refiners; only enlarge depthwise kernels3 to7 to test wider local context.",
+    "protocol": "Original RiceSEG318/82,512,batch8,120ep,CE,AMP,AdamW,schedule,augmentation,dropout0.1. Independent random/no source/teacher. Seed7/3407 only if seed42 >=73.47%.",
+    "code_sha256": {
+      "rice_lite.py": "88335e39d9a00b5f465051b85a0d744e35d1d9726393bdbe10f455002df7002b",
+      "matched_recipe.py": "0be9a2f299f2b327bc63cc74ef2522441a19a0e7c2ee22c3a04e804e399dde44",
+      "matched_baselines.json": "2a8bf638ca96c314674a0757c42af013de67866c1977d9922c562663669c7672",
+      "matched_cgnet_recipe.py": "23ca8c598b91a80bf57c0bae1e33ea4bfcf9e90702b57b3d9ec21b860c50e570",
+      "matched_cgnet_fusion_recipe.py": "2da6e75046a189962694c7e69a21a89d52e8043d2e407b9c09fed5023e587cca",
+      "matched_cgnet_refine_recipe.py": "43a7b2e1837ff9ceb182ac9f0ff6bc2b149ae1a6648331c6d6dab85d433d6ae3",
+      "matched_cgnet_refine7_recipe.py": "14e512eaa1bfa72c1349c5d3e200820daefdebbf71f50d4e9d7265ff49094929",
+      "preflight_matched_cgnet_refine7.py": "229d0e560b29b9f4d3a746cd76201dc263456f1f4fcd4bb4c46414b17bac961f",
+      "train_matched_cgnet_refine7.py": "527b12cb5a2776d322feb013b298b5c2b2b9059ecd02b6bed428dfceefc584f3",
+      "train_seg.py": "0d5eee198bbe4a7ac3e7cbaae742b29b13a6c67e9008a2d430e89a21446dcf42",
+      "matched_cgnet_refine7_queue.py": "98d662e2e7d18d9016bf686860e3d02eaaf9bc8853e9604cfcb098215f748b7d"
+    }
+  },
+  {
+    "name": "RiceSEG_cgnet_refine7_matched_random_seed7",
+    "dataset": "RiceSEG",
+    "phase": "RiceSEG_matched_random",
+    "seed": 7,
+    "parameters": 956852,
+    "architecture": "CGNetRefine7NativeSeg",
+    "initialization": "random",
+    "teacher": false,
+    "test_evaluated": false,
+    "confirmation_min_seed42_miou_percent": 73.47,
+    "command": [
+      "/root/miniconda3/bin/python",
+      "-u",
+      "/root/autodl-tmp/work/stage3_lite_20260926/train_matched_cgnet_refine7.py",
+      "--seed",
+      "7"
+    ],
+    "purpose": "Keep CGNet, fusion256 and two residual refiners; only enlarge depthwise kernels3 to7 to test wider local context.",
+    "protocol": "Original RiceSEG318/82,512,batch8,120ep,CE,AMP,AdamW,schedule,augmentation,dropout0.1. Independent random/no source/teacher. Seed7/3407 only if seed42 >=73.47%.",
+    "code_sha256": {
+      "rice_lite.py": "88335e39d9a00b5f465051b85a0d744e35d1d9726393bdbe10f455002df7002b",
+      "matched_recipe.py": "0be9a2f299f2b327bc63cc74ef2522441a19a0e7c2ee22c3a04e804e399dde44",
+      "matched_baselines.json": "2a8bf638ca96c314674a0757c42af013de67866c1977d9922c562663669c7672",
+      "matched_cgnet_recipe.py": "23ca8c598b91a80bf57c0bae1e33ea4bfcf9e90702b57b3d9ec21b860c50e570",
+      "matched_cgnet_fusion_recipe.py": "2da6e75046a189962694c7e69a21a89d52e8043d2e407b9c09fed5023e587cca",
+      "matched_cgnet_refine_recipe.py": "43a7b2e1837ff9ceb182ac9f0ff6bc2b149ae1a6648331c6d6dab85d433d6ae3",
+      "matched_cgnet_refine7_recipe.py": "14e512eaa1bfa72c1349c5d3e200820daefdebbf71f50d4e9d7265ff49094929",
+      "preflight_matched_cgnet_refine7.py": "229d0e560b29b9f4d3a746cd76201dc263456f1f4fcd4bb4c46414b17bac961f",
+      "train_matched_cgnet_refine7.py": "527b12cb5a2776d322feb013b298b5c2b2b9059ecd02b6bed428dfceefc584f3",
+      "train_seg.py": "0d5eee198bbe4a7ac3e7cbaae742b29b13a6c67e9008a2d430e89a21446dcf42",
+      "matched_cgnet_refine7_queue.py": "98d662e2e7d18d9016bf686860e3d02eaaf9bc8853e9604cfcb098215f748b7d"
+    }
+  },
+  {
+    "name": "RiceSEG_cgnet_refine7_matched_random_seed3407",
+    "dataset": "RiceSEG",
+    "phase": "RiceSEG_matched_random",
+    "seed": 3407,
+    "parameters": 956852,
+    "architecture": "CGNetRefine7NativeSeg",
+    "initialization": "random",
+    "teacher": false,
+    "test_evaluated": false,
+    "confirmation_min_seed42_miou_percent": 73.47,
+    "command": [
+      "/root/miniconda3/bin/python",
+      "-u",
+      "/root/autodl-tmp/work/stage3_lite_20260926/train_matched_cgnet_refine7.py",
+      "--seed",
+      "3407"
+    ],
+    "purpose": "Keep CGNet, fusion256 and two residual refiners; only enlarge depthwise kernels3 to7 to test wider local context.",
+    "protocol": "Original RiceSEG318/82,512,batch8,120ep,CE,AMP,AdamW,schedule,augmentation,dropout0.1. Independent random/no source/teacher. Seed7/3407 only if seed42 >=73.47%.",
+    "code_sha256": {
+      "rice_lite.py": "88335e39d9a00b5f465051b85a0d744e35d1d9726393bdbe10f455002df7002b",
+      "matched_recipe.py": "0be9a2f299f2b327bc63cc74ef2522441a19a0e7c2ee22c3a04e804e399dde44",
+      "matched_baselines.json": "2a8bf638ca96c314674a0757c42af013de67866c1977d9922c562663669c7672",
+      "matched_cgnet_recipe.py": "23ca8c598b91a80bf57c0bae1e33ea4bfcf9e90702b57b3d9ec21b860c50e570",
+      "matched_cgnet_fusion_recipe.py": "2da6e75046a189962694c7e69a21a89d52e8043d2e407b9c09fed5023e587cca",
+      "matched_cgnet_refine_recipe.py": "43a7b2e1837ff9ceb182ac9f0ff6bc2b149ae1a6648331c6d6dab85d433d6ae3",
+      "matched_cgnet_refine7_recipe.py": "14e512eaa1bfa72c1349c5d3e200820daefdebbf71f50d4e9d7265ff49094929",
+      "preflight_matched_cgnet_refine7.py": "229d0e560b29b9f4d3a746cd76201dc263456f1f4fcd4bb4c46414b17bac961f",
+      "train_matched_cgnet_refine7.py": "527b12cb5a2776d322feb013b298b5c2b2b9059ecd02b6bed428dfceefc584f3",
+      "train_seg.py": "0d5eee198bbe4a7ac3e7cbaae742b29b13a6c67e9008a2d430e89a21446dcf42",
+      "matched_cgnet_refine7_queue.py": "98d662e2e7d18d9016bf686860e3d02eaaf9bc8853e9604cfcb098215f748b7d"
+    }
+  }
+]

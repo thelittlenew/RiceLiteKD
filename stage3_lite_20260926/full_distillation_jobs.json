@@ -1,0 +1,121 @@
+{
+  "created_at": "2026-09-26T21:41:54+0800",
+  "authorization": "那就走完整的蒸馏",
+  "student_architecture": "CGNetRefine7NativeSeg",
+  "student_parameters": 956852,
+  "student_initialization": "native random seed42; no RiceSEG weights",
+  "source_epochs": 120,
+  "source_batch_size": 8,
+  "source_paired_total": 103817,
+  "source_min_usable": 100000,
+  "invalid_file_policy": "Exclude only decode/shape/mask failures with original path/SHA/reason preserved; no replacement or subsampling",
+  "source_preparation_code_sha256": "97d0179dcae917ec41a868508f266d602a4cd3330799d9b960db2d4ccefaf64f",
+  "teacher_source": "/root/autodl-tmp/work/stage/stage2_train_dinov3_mask2former_pseudolabel.py",
+  "teacher_weights": "/root/autodl-tmp/work/model/RicePanicle_Stage2_DINOv3S_teacher_best_panicle_iou_model_only.pth",
+  "teacher_source_sha256": "464e4564ef4cd7b94eadf1eb903ccd203bae6e533f64d1970dbb283dd836bf84",
+  "teacher_weights_sha256": "296f0be42444f3ee90e537e627ad4b58112ccc03d6b84d9d6724c0b4f965750a",
+  "original_source_script_sha256": "7f51e23d559ddd875632473f345a17f26cc08266d601f2d378faf1810bbf9252",
+  "optimizer": {
+    "type": "AdamW",
+    "lr": 0.0003,
+    "weight_decay": 0.05,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "grad_clip": 1.0
+  },
+  "schedule": {
+    "warmup_epochs": 5,
+    "cosine_end_epoch": 120,
+    "min_lr": 3e-06,
+    "update_unit": "epoch"
+  },
+  "loss": {
+    "CE": 1.0,
+    "two_class_Dice": 2.0,
+    "valid_pixel_mean_KL_T4": 2.0,
+    "channel_independent_multiscale_attention_transfer": 3.0,
+    "feature_scale_weights": [
+      1.0,
+      1.0,
+      1.0,
+      0.5
+    ],
+    "changes_from_old": [
+      "KL is normalized per valid pixel, not unnormalized batchmean",
+      "Parameter-free channel-independent feature attention transfer replaces same-channel normalized MSE"
+    ]
+  },
+  "teacher_precision": "FP32 frozen",
+  "student_precision": "AMP fp16 dynamic scale1024 initially",
+  "source_group_split": "pilot fixed original-photo val groups expanded by exact-RGB connected components; no cross split groups/pixels",
+  "downstream": "All source validation-best backbone+decoder weights transferred; original RiceSEG native recipe120ep at seeds42/7/3407; no task teacher",
+  "test_policy": "No test in this training queue; architecture and recipes fixed independently of known scratch test scores",
+  "code_sha256": {
+    "rice_lite.py": "88335e39d9a00b5f465051b85a0d744e35d1d9726393bdbe10f455002df7002b",
+    "matched_recipe.py": "0be9a2f299f2b327bc63cc74ef2522441a19a0e7c2ee22c3a04e804e399dde44",
+    "matched_baselines.json": "2a8bf638ca96c314674a0757c42af013de67866c1977d9922c562663669c7672",
+    "matched_cgnet_recipe.py": "23ca8c598b91a80bf57c0bae1e33ea4bfcf9e90702b57b3d9ec21b860c50e570",
+    "matched_cgnet_fusion_recipe.py": "2da6e75046a189962694c7e69a21a89d52e8043d2e407b9c09fed5023e587cca",
+    "matched_cgnet_refine_recipe.py": "43a7b2e1837ff9ceb182ac9f0ff6bc2b149ae1a6648331c6d6dab85d433d6ae3",
+    "matched_cgnet_refine7_recipe.py": "14e512eaa1bfa72c1349c5d3e200820daefdebbf71f50d4e9d7265ff49094929",
+    "train_seg.py": "0d5eee198bbe4a7ac3e7cbaae742b29b13a6c67e9008a2d430e89a21446dcf42",
+    "full_distill_components.py": "047429a0f7680373026a976d04f5eee50c9e7e9840e6fb5155e8b958b73bc848",
+    "preflight_full_refine7.py": "056b6cb806075073a4571322c317af49ed94a6b67f572a501550f6a991290162",
+    "train_full_refine7_distill.py": "600f0253a11d24bfbb2a39391ba1123d9cbdcbeb273e82bf3034a99dc2c042b9",
+    "train_full_refine7_rice.py": "439dbe88f02add9d5d4bb2479e070cf454d4b4528657d0d08f8f6e8c7dd50661",
+    "full_distillation_queue.py": "bb79c33c70f0ab916fac2002535bbce51b775748b4ae936aef98ebd63070f78b"
+  },
+  "jobs": [
+    {
+      "name": "SourceFull_refine7_distill_120ep_seed42",
+      "dataset": "RiceSEG",
+      "phase": "source_pretraining_for_RiceSEG",
+      "command": [
+        "/root/miniconda3/bin/python",
+        "-u",
+        "/root/autodl-tmp/work/stage3_lite_20260926/train_full_refine7_distill.py"
+      ]
+    },
+    {
+      "name": "RiceSEG_refine7_full_distill_seed42",
+      "dataset": "RiceSEG",
+      "phase": "RiceSEG_full_distill_finetuning",
+      "seed": 42,
+      "command": [
+        "/root/miniconda3/bin/python",
+        "-u",
+        "/root/autodl-tmp/work/stage3_lite_20260926/train_full_refine7_rice.py",
+        "--seed",
+        "42"
+      ]
+    },
+    {
+      "name": "RiceSEG_refine7_full_distill_seed7",
+      "dataset": "RiceSEG",
+      "phase": "RiceSEG_full_distill_finetuning",
+      "seed": 7,
+      "command": [
+        "/root/miniconda3/bin/python",
+        "-u",
+        "/root/autodl-tmp/work/stage3_lite_20260926/train_full_refine7_rice.py",
+        "--seed",
+        "7"
+      ]
+    },
+    {
+      "name": "RiceSEG_refine7_full_distill_seed3407",
+      "dataset": "RiceSEG",
+      "phase": "RiceSEG_full_distill_finetuning",
+      "seed": 3407,
+      "command": [
+        "/root/miniconda3/bin/python",
+        "-u",
+        "/root/autodl-tmp/work/stage3_lite_20260926/train_full_refine7_rice.py",
+        "--seed",
+        "3407"
+      ]
+    }
+  ]
+}
